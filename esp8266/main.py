@@ -19,8 +19,23 @@ def read_dht22():
 
 
 
+
 def make_html():
-    html = """<!DOCTYPE html><html><head><title>ESP8266</title></head><body><h1>kb-iot ESP8266 with attached DHT22 temp/humid sensor</h1><p>temp %f</p><p>humidity: %f</p></body></html>""" % (read_dht22())
+    html = """<!DOCTYPE html><html><head><title>ESP8266</title>
+    </head><body><h3>kb ESP8266 + DHT22</h3>
+    <table>
+  <tr>
+    <th>location</th>
+    <th>temperature</th>
+    <th>humidity</th>
+  </tr>
+  <tr>
+    <td>back porch</td>
+    <td>%f</td>
+    <td>%f</td>
+  </tr>
+  </table>
+    </body></html>""" % (read_dht22())
     return(html)
 
 
